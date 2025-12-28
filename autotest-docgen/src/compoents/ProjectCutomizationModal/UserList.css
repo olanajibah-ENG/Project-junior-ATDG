@@ -1,0 +1,140 @@
+.users-list-container {
+  overflow-x: auto; /* يسمح بالتمرير الأفقي للجداول الكبيرة */
+  margin: 20px auto;
+  padding: 0 15px;
+  max-width: 1000px; /* تحديد عرض أقصى للجدول */
+}
+
+/* التنسيق الأساسي للجدول */
+.users-table {
+  width: 100%;
+  border-collapse: collapse; /* دمج حدود الخلايا */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+  background-color: #ffffff;
+  border-radius: 8px; /* زوايا مستديرة */
+}
+
+/* تنسيق رأس الجدول (Header) */
+.users-table thead th {
+  background-color: #3498db; /* لون خلفية أزرق */
+  color: white; /* لون النص أبيض */
+  font-weight: 600;
+  padding: 12px 15px;
+  text-align: right; /* محاذاة النص لليمين (مناسب للعربية) */
+}
+
+/* تنسيق صفوف الجدول */
+.users-table tbody tr {
+  border-bottom: 1px solid #eee; /* فاصل بين الصفوف */
+  transition: background-color 0.2s;
+}
+
+/* تأثير التمرير بالماوس على الصف (Hover Effect) */
+.users-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* تنسيق بيانات الخلايا */
+.users-table td {
+  padding: 10px 15px;
+  color: #333;
+}
+
+/* تنسيق العمود الأول (#) بشكل مميز */
+.users-table tbody tr td:first-child {
+  font-weight: bold;
+  color: #7f8c8d;
+}
+
+/* تنسيق خلية اسم المستخدم */
+.username-cell {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* تنسيق خلايا الإجراءات (الأزرار) */
+.actions-cell {
+  white-space: nowrap; /* منع انقسام الأزرار على سطرين */
+}
+
+.action-button {
+  padding: 6px 12px;
+  margin-left: 5px; /* مسافة بين الأزرار */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s;
+}
+
+.action-button.view {
+  background-color: #2ecc71; /* أخضر للعرض */
+  color: white;
+}
+
+.action-button.delete {
+  background-color: #e74c3c; /* أحمر للحذف */
+  color: white;
+}
+
+.action-button:hover {
+  opacity: 0.85;
+}
+
+/* 📱 تنسيقات الاستجابة (Responsive Design) - مهم جداً */
+
+/* عند عرض الجدول على شاشات صغيرة (مثل الهواتف) */
+@media screen and (max-width: 600px) {
+  .users-table {
+    border: 0;
+  }
+  
+  /* إخفاء رأس الجدول الأصلي */
+  .users-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  /* تحويل الصفوف إلى كتل */
+  .users-table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* تنسيق كل خلية لتبدو كصف مستقل */
+  .users-table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  
+  /* عرض اسم العمود كـ تسمية (Label) في وضع الهاتف */
+  .users-table td::before {
+    content: attr(data-label);
+    float: right; /* لجعل التسمية على اليسار في الوضع العربي */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 5px;
+    color: #555;
+  }
+  
+  .users-table td:last-child {
+    border-bottom: 0;
+  }
+  
+  /* تعديل محاذاة نص البيانات في وضع الهاتف */
+  .users-table td:not(:empty) {
+    text-align: left;
+  }
+}

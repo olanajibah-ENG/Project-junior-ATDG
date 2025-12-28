@@ -1,0 +1,114 @@
+/* ================================== */
+/* Projects List Component Styles */
+/* ================================== */
+.projects-list-container {
+    width: 100%;
+}
+
+.projects-table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+
+.projects-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.projects-table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.projects-table th {
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.projects-table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.projects-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.projects-table td {
+    padding: 15px 12px;
+    vertical-align: middle;
+}
+
+.project-title-cell {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.project-description-cell {
+    color: var(--secondary-color);
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.project-owner-cell,
+.project-date-cell {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.project-actions-cell {
+    white-space: nowrap;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    padding: 8px;
+    margin: 0 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-edit {
+    color: var(--primary-color);
+}
+
+.btn-edit:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.btn-delete {
+    color: var(--high-risk);
+}
+
+.btn-delete:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .projects-table-wrapper {
+        overflow-x: scroll;
+    }
+
+    .projects-table {
+        min-width: 800px;
+    }
+}
+
