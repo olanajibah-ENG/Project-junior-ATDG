@@ -1,0 +1,36 @@
+
+Django==4.2.14
+djangorestframework
+pymongo>=4.0 # Djongo قد يتطلب pymongo بشكل صريح أحياناً
+celery[redis] # لـ Celery مع Redis
+tree-sitter>=0.20.0,<0.21.0 # لـ parsing الكود - إصدار مستقر يتوافق مع tree-sitter-languages
+tree-sitter-languages>=1.6.0,<1.7.0 # مكتبة جاهزة تحتوي على parsers للغات المختلفة
+tree-sitter-java # مباشرة للـ Java كبديل
+djangorestframework-simplejwt
+django-cors-headers==4.9.0
+drf-yasg
+django-celery-results
+django-celery-beat
+django-environ
+setuptools
+wheel
+pydantic==1.10.13
+gunicorn
+requests
+python-dotenv
+
+# PDF Generation Libraries (متدرجة حسب الأولوية)
+# الأفضل: WeasyPrint - يدعم CSS3 الكامل
+weasyprint>=60.0
+cffi>=1.15.0  # مطلوب لـ WeasyPrint
+cairocffi>=1.4.0  # مطلوب للرسوم في WeasyPrint
+
+# البديل الأول: xhtml2pdf - متوافق مع CSS الأساسي
+xhtml2pdf>=0.2.5
+
+# البديل الأساسي: ReportLab - يعمل دائماً
+reportlab>=4.0.0
+
+# مكتبات مساعدة للـ PDF
+Pillow>=9.0.0  # لمعالجة الصور في PDF
+html5lib>=1.1  # لتحليل HTML بشكل أفضل
