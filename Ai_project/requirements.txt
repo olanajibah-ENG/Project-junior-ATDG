@@ -1,0 +1,21 @@
+
+Django==4.2.14
+djangorestframework
+pymongo>=4.0 # Djongo قد يتطلب pymongo بشكل صريح أحياناً
+celery[redis] # لـ Celery مع Redis
+tree-sitter>=0.20.0,<0.21.0 # لـ parsing الكود - إصدار مستقر يتوافق مع tree-sitter-languages
+tree-sitter-languages>=1.6.0,<1.7.0 # مكتبة جاهزة تحتوي على parsers للغات المختلفة
+tree-sitter-java # مباشرة للـ Java كبديل
+djangorestframework-simplejwt
+django-cors-headers==4.9.0
+drf-yasg
+django-celery-results
+django-celery-beat
+django-environ
+setuptools
+wheel
+pydantic==1.10.13
+gunicorn
+requests
+xhtml2pdf 
+python-dotenv
