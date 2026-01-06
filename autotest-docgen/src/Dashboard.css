@@ -1,0 +1,323 @@
+/* ================================== */
+/* Dashboard Component Styles */
+/* ================================== */
+.dashboard-layout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main-content";
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    width: 100vw;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.4em;
+    color: var(--primary-color);
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.user-info a {
+    color: var(--secondary-color);
+    margin-left: 15px;
+}
+
+.header-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.header-link:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+.user-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Sidebar */
+.sidebar,
+.analysis-sidebar {
+    grid-area: sidebar;
+    background-color: var(--sidebar-bg);
+    padding: 20px 0;
+    border-right: 1px solid #eee;
+    height: 100%;
+    overflow: auto;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.sidebar nav a,
+.analysis-sidebar nav a,
+.analysis-sidebar ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color 0.2s;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active,
+.analysis-sidebar nav a:hover,
+.analysis-sidebar ul li a:hover,
+.analysis-sidebar ul li a.active {
+    background-color: #e9ecef;
+    text-decoration: none;
+    border-left: 4px solid var(--primary-color);
+}
+
+.sidebar nav a i,
+.analysis-sidebar ul li a i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.sidebar-section {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.sidebar-section h3 {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    padding-left: 5px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+.sidebar-section ul {
+    list-style: none;
+}
+
+.summary-box {
+    margin: 0 20px 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.summary-box h4 i {
+    margin-right: 8px;
+    color: var(--high-risk);
+}
+
+/* Main Content */
+.main-content {
+    grid-area: main-content;
+    padding: 30px;
+    overflow: auto;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.main-content h2 {
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #495057;
+}
+
+/* Project Dashboard Specific */
+.code-editor-area {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.code-editor-area label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+#code-input {
+    width: 100%;
+    min-height: 350px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: monospace;
+    font-size: 0.95em;
+    resize: vertical;
+    outline: none;
+    text-align: left;
+    direction: ltr;
+}
+
+/* Action Buttons */
+.action-buttons button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease, border 0.18s ease;
+}
+
+.action-buttons button:hover,
+.action-buttons button:focus {
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    outline: none;
+}
+
+.action-buttons .btn-primary,
+.action-buttons .btn-secondary {
+    background-color: #000;
+    color: #fff;
+}
+
+.action-buttons .btn-primary:hover,
+.action-buttons .btn-secondary:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* Analysis View Specific */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.code-display-panel,
+.issues-panel {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.code-display-panel h3,
+.issues-panel h3 {
+    color: var(--primary-color);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.code-block {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-size: 0.9em;
+    text-align: left;
+    direction: ltr;
+}
+
+.highlight-error {
+    background-color: rgba(220, 53, 69, 0.5);
+    display: block;
+    padding: 0 5px;
+    margin: 2px 0;
+}
+
+.highlight-warning {
+    background-color: rgba(255, 193, 7, 0.5);
+    display: block;
+    padding: 0 5px;
+    margin: 2px 0;
+}
+
+.issues-panel table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.issues-panel th,
+.issues-panel td {
+    padding: 12px;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+}
+
+.issues-panel th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: bold;
+}
+
+.issues-panel tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .user-info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main-content";
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+

@@ -1,0 +1,47 @@
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* تصميم الدوارة نفسها (Circle) */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #3498db; /* لون الدوران الأساسي */
+  border-radius: 50%;
+  box-sizing: border-box; /* لضمان أن الحجم يشمل الحدود */
+  
+  /* تطبيق الحركة (Animation) */
+  animation: spin 1s linear infinite; 
+}
+
+/* تحديد الأحجام */
+.spinner-small .spinner {
+  width: 20px;
+  height: 20px;
+}
+.spinner-medium .spinner {
+  width: 40px;
+  height: 40px;
+}
+.spinner-large .spinner {
+  width: 60px;
+  height: 60px;
+  border-width: 6px; /* زيادة سماكة الحد للحجم الكبير */
+}
+
+/* تصميم رسالة التحميل */
+.loading-message {
+  margin-top: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* تعريف حركة الدوران (Keyframes) */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

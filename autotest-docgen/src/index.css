@@ -1,0 +1,41 @@
+/* ================================== */
+/* Global Styles & CSS Variables */
+/* ================================== */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f4f7f9;
+    --sidebar-bg: #ffffff;
+    --text-color: #333;
+    --high-risk: #dc3545;
+    --medium-risk: #ffc107;
+    --low-risk: #28a745;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    direction: ltr;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
